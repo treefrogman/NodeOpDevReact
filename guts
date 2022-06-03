@@ -1,0 +1,389 @@
+<defs>
+					<radialGradient id="s0cketGradient">
+						<stop id="s0cketGradientStart" offset="10%"></stop><stop id="s0cketGradientEnd" offset="15%"></stop>
+					</radialGradient>
+					<rect id="fullScreenRect" width="1440" height="744"></rect>
+					<rect class="n0deFrame" id="outerN0deFrameDef" width="1280" height="704"></rect>
+					<mask id="outerN0deMask">
+						<use href="#fullScreenRect" id="outerN0deMaskBack"></use>
+						<use href="#outerN0deFrameDef" x="80" y="20"></use>
+					</mask>
+				</defs>
+						<use href="#fullScreenRect" id="frameBack"></use>
+						<use href="#fullScreenRect" id="canvasBack"></use>
+						<g class="c0nnectorsGroup">
+							<path class="c0nnectorLine" d="M80, 34 A34.800000000000004,34.800000000000004 0 0,1 109.13135228698724, 49.76308024045268 L170.86864771301276, 144.23691975954733 A34.800000000000004,34.800000000000004 0 0,0 200, 160"></path>
+							<path class="c0nnectorLine" d="M80, 48 A34.800000000000004,34.800000000000004 0 0,1 109.13135228698724, 63.76308024045268 L170.86864771301276, 158.23691975954733 A34.800000000000004,34.800000000000004 0 0,0 200, 174"></path>
+							<path class="c0nnectorLine" d="M286, 174 A27.968553770261344,27.968553770261344 0 0,0 294.5064043430326, 172.6750399279025 L411.4935956569674, 135.3249600720975 A27.968553770261344,27.968553770261344 0 0,1 420, 134"></path>
+							<path class="c0nnectorLine" d="M518, 134 A6.4,6.4 0 1,0 518, 134 L550, 134 A6.4,6.4 0 1,1 550, 134"></path>
+							<path class="c0nnectorLine" d="M651, 120 A50,50 0 0,0 657.0721878418308, 119.62991572442493 L1353.9278121581692, 34.37008427557506 A50,50 0 0,1 1360, 34"></path>
+							<path class="c0nnectorLine" d="M286, 174 A43.541244814543376,43.541244814543376 0 0,1 294.31484452505964, 174.8012944106872 L491.68515547494036, 213.1987055893128 A43.541244814543376,43.541244814543376 0 0,0 500, 214"></path>
+							<path class="c0nnectorLine" d="M601, 214 A50,50 0 0,0 611.8321837421004, 212.8125372765786 L1349.1678162578996, 49.18746272342139 A50,50 0 0,1 1360, 48"></path>
+						</g>
+				<g class="n0desGroup">
+					<svg x="200" y="160" class="innerN0de" width="86" height="28">
+						<rect class="n0deFrame innerN0deFrame" width="86" height="28"></rect>
+						<svg class="n0deTitle" x="43" y="0" style="">
+							<rect x="-15.0625" y="-9.3359375" width="30.125" height="16"></rect>
+							<text>Foo</text>
+						</svg>
+						<g>
+							<svg x="0" y="0">
+								<text text-anchor="start" x="7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-26.5546875" y="-7.25" width="33.8046875" height="14.5">
+									</rect>
+									<text text-anchor="end">Foo</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="86" y="0">
+								<text text-anchor="end" x="-7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="33.8046875" height="14.5">
+									</rect>
+									<text text-anchor="start">Foo</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="0" y="14">
+								<text text-anchor="start" x="7" class="s0cketLabel">Bazzle</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-39" y="-7.25" width="46.25" height="14.5">
+									</rect>
+									<text text-anchor="end">Bwerp</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="86" y="14">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Basil</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="31.9296875" height="14.5">
+									</rect>
+									<text text-anchor="start">Bar</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+						</g>
+					</svg>
+					<svg x="420" y="120" class="innerN0de" width="98" height="42">
+						<rect class="n0deFrame innerN0deFrame" width="98" height="42">
+						</rect>
+						<svg class="n0deTitle" x="49" y="0" style="">
+							<rect x="-37.625" y="-9.3359375" width="75.25" height="16">
+							</rect>
+							<text>Frobscottle</text>
+						</svg>
+						<g>
+							<svg x="0" y="0">
+								<text text-anchor="start" x="7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-62.6484375" y="-7.25" width="69.8984375" height="14.5">
+									</rect>
+									<text text-anchor="end">Frobscottle</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="98" y="0">
+								<text text-anchor="end" x="-7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="69.8984375" height="14.5">
+									</rect>
+									<text text-anchor="start">Frobscottle</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="0" y="14">
+								<text text-anchor="start" x="7" class="s0cketLabel">Froth</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-24.6796875" y="-7.25" width="31.9296875" height="14.5">
+									</rect>
+									<text text-anchor="end">Bar</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="0" y="28">
+								<text text-anchor="start" x="7" class="s0cketLabel">Scuttle</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-31.5234375" y="-7.25" width="38.7734375" height="14.5">
+									</rect>
+									<text text-anchor="end">Flotz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="98" y="14">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Broth</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="start">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+						</g>
+					</svg>
+					<svg x="550" y="120" class="innerN0de" width="101" height="42">
+						<rect class="n0deFrame innerN0deFrame" width="101" height="42">
+						</rect>
+						<svg class="n0deTitle" x="50.5" y="0" style="">
+							<rect x="-20.90625" y="-9.3359375" width="41.8125" height="16">
+							</rect>
+							<text>Bloop</text>
+						</svg>
+						<g>
+							<svg x="0" y="0">
+								<text text-anchor="start" x="7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-35.8984375" y="-7.25" width="43.1484375" height="14.5">
+									</rect>
+									<text text-anchor="end">Bloop</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="0">
+								<text text-anchor="end" x="-7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="43.1484375" height="14.5">
+									</rect>
+									<text text-anchor="start">Bloop</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="0" y="14">
+								<text text-anchor="start" x="7" class="s0cketLabel">Scuzzy</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-29.0390625" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="end">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="14">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Flobble</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="start">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="28">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Scootz</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="start">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+						</g>
+					</svg>
+					<svg x="500" y="200" class="innerN0de" width="101" height="42">
+						<rect class="n0deFrame innerN0deFrame" width="101" height="42">
+						</rect>
+						<svg class="n0deTitle" x="50.5" y="0" style="">
+							<rect x="-20.90625" y="-9.3359375" width="41.8125" height="16">
+							</rect>
+							<text>Bloop</text>
+						</svg>
+						<g>
+							<svg x="0" y="0">
+								<text text-anchor="start" x="7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-35.8984375" y="-7.25" width="43.1484375" height="14.5">
+									</rect>
+									<text text-anchor="end">Bloop</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="0">
+								<text text-anchor="end" x="-7" class="s0cketLabel">
+								</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="43.1484375" height="14.5">
+									</rect>
+									<text text-anchor="start">Bloop</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="0" y="14">
+								<text text-anchor="start" x="7" class="s0cketLabel">Scuzzy</text>
+								<svg class="s0cketType" x="-8" y="0" style="">
+									<rect rx="7.25" x="-29.0390625" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="end">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="14">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Flobble</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="start">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+							<svg x="101" y="28">
+								<text text-anchor="end" x="-7" class="s0cketLabel">Scootz</text>
+								<svg class="s0cketType" x="8" y="0" style="">
+									<rect rx="7.25" x="-7.25" y="-7.25" width="36.2890625" height="14.5">
+									</rect>
+									<text text-anchor="start">Blaz</text>
+								</svg>
+								<circle class="s0cketCircle">
+								</circle>
+								<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+								</rect>
+							</svg>
+						</g>
+					</svg>
+				</g>
+				<path id="frameMouseMask" d="M0,0 H1440 V744 H0 Z M80,20 v704 h1280 V20 Z">
+				</path>
+				<svg x="80" y="20" class="outerN0de" width="1280" height="704">
+					<use class="outerN0deFrame" href="#outerN0deFrameDef">
+					</use>
+					<svg class="n0deTitle" x="640" y="0" style="">
+						<rect x="-38.015625" y="-9.3359375" width="76.03125" height="16">
+						</rect>
+						<text>Froobalizer</text>
+					</svg>
+					<g>
+						<svg x="0" y="0">
+							<text text-anchor="end" x="-7" class="s0cketLabel">
+							</text>
+							<svg class="s0cketType" x="8" y="0" style="">
+								<rect rx="7.25" x="-7.25" y="-7.25" width="70.5234375" height="14.5">
+								</rect>
+								<text text-anchor="start">Froobalizer</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+						<svg x="1280" y="0">
+							<text text-anchor="start" x="7" class="s0cketLabel">
+							</text>
+							<svg class="s0cketType" x="-8" y="0" style="">
+								<rect rx="7.25" x="-63.2734375" y="-7.25" width="70.5234375" height="14.5">
+								</rect>
+								<text text-anchor="end">Froobalizer</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+						<svg x="0" y="14">
+							<text text-anchor="end" x="-7" class="s0cketLabel">Frumpkin</text>
+							<svg class="s0cketType" x="8" y="0" style="">
+								<rect rx="7.25" x="-7.25" y="-7.25" width="33.8046875" height="14.5">
+								</rect>
+								<text text-anchor="start">Foo</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+						<svg x="0" y="28">
+							<text text-anchor="end" x="-7" class="s0cketLabel">Frumpkator</text>
+							<svg class="s0cketType" x="8" y="0" style="">
+								<rect rx="7.25" x="-7.25" y="-7.25" width="46.25" height="14.5">
+								</rect>
+								<text text-anchor="start">Bwerp</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+						<svg x="1280" y="14">
+							<text text-anchor="start" x="7" class="s0cketLabel">Frumpstant</text>
+							<svg class="s0cketType" x="-8" y="0" style="">
+								<rect rx="7.25" x="-35.8984375" y="-7.25" width="43.1484375" height="14.5">
+								</rect>
+								<text text-anchor="end">Bloop</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+						<svg x="1280" y="28">
+							<text text-anchor="start" x="7" class="s0cketLabel">Frooz</text>
+							<svg class="s0cketType" x="-8" y="0" style="">
+								<rect rx="7.25" x="-29.0390625" y="-7.25" width="36.2890625" height="14.5">
+								</rect>
+								<text text-anchor="end">Blaz</text>
+							</svg>
+							<circle class="s0cketCircle">
+							</circle>
+							<rect x="-7" y="-7" width="14" height="14" class="s0cketClickZone">
+							</rect>
+						</svg>
+					</g>
+				</svg>

@@ -1,38 +1,71 @@
+:root {
+	--main-back-color: rgb(255, 255, 255);
+	--canvas-back-color: rgb(212, 212, 212);
+	--main-element-color-rgb: 32, 32, 32;
+	--main-element-color: rgb(var(--main-element-color-rgb));
+	--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
+	--main-element-line-thickness: 2px;
+	--pørt-radius: 3px;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+* {
+	overflow: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-back-color: rgb(32,32,32);
+		--main-element-color-rgb: 212, 212, 212;
+		--canvas-back-color: rgb(68, 62, 62);
+		--main-element-color: rgb(var(--main-element-color-rgb));
+		--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
+	}
+}
+
 .App {
-  text-align: center;
+	background-color: var(--canvas-back-color);
+	--text-color: white;
+	--text-back-color: rgb(32,32,32);
+	font-size: 14px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.TextBubble-text {
+	fill: var(--main-element-color);
+	font-size: .8em;
+	font-weight: 550;
+	font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TextBubble-back {
+	fill: var(--main-back-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.NødeTitle .TextBubble-text {
+	font-size: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.Nøde-back {
+	fill: var(--main-back-color);
+	stroke: var(--main-element-color);
+	stroke-width: var(--main-element-line-thickness);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Høse {
+	stroke: var(--main-element-color);
+	stroke-width: var(--main-element-line-thickness);
+}
+
+.SVGRoundRectCutout {
+	stroke: var(--main-element-color);
+	fill: var(--main-back-color);
+	stroke-width: var(--main-element-line-thickness);
+}
+
+.Pørt-ring {
+	stroke: var(--main-element-color);
+	stroke-width: var(--main-element-line-thickness);
+	fill: var(--main-back-color);
+	r: var(--pørt-radius);
 }

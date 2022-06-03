@@ -1,0 +1,13 @@
+.Pørt-hitbox {
+	fill: var(--main-element-color-transparent);
+	stroke: var(--main-element-color-transparent);
+	stroke-width: var(--main-element-line-thickness);
+}
+
+.Pørt-hitbox, .Pørt-hitbox:hover+.Pørt-ring {
+	r: calc(var(--pørt-radius) + var(--main-element-line-thickness));
+}
+
+.Pørt-ring {
+	pointer-events: none;
+}
