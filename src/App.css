@@ -25,15 +25,17 @@
 }
 
 .App {
-	background-color: var(--canvas-back-color);
 	--text-color: white;
 	--text-back-color: rgb(32,32,32);
 	font-size: 14px;
 }
 
+.ScrollDragCanvas-back {
+	fill: var(--canvas-back-color);
+}
+
 .TextBubble-text {
 	fill: var(--main-element-color);
-	font-size: .8em;
 	font-weight: 550;
 	font-family: sans-serif;
 }
@@ -42,8 +44,8 @@
 	fill: var(--main-back-color);
 }
 
-.NødeTitle .TextBubble-text {
-	font-size: 1em;
+.Pørt .TextBubble-text {
+	font-size: .8em;
 }
 
 .Nøde-back {

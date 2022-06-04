@@ -1,28 +1,40 @@
 import './App.css';
 import useWindowDimensions from './utils/useWindowDimensions';
-import useMousePosition from './utils/useMousePosition';
 import React from 'react';
 import Høse from './Høse';
 import TextBubble from './TextBubble';
 // import Pørt from './Pørt';
 import Nøde from './Nøde';
 import OuterNøde from './OuterNøde';
+import ScrollDragCanvas from './ScrollDragCanvas';
+
+function rpos() {
+	return (Math.random()-.5) * 600;
+}
+const pts = [
+	{ x: rpos(), y: rpos() },
+	{ x: rpos(), y: rpos() },
+	{ x: rpos(), y: rpos() },
+];
 
 export default function App() {
 	// No scrollbars
 	React.useEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
-	
+	const [ offset, setOffset ] = React.useState({ x: 0, y: 0 });
 	const { height, width } = useWindowDimensions();
-	const { left, top } = useMousePosition();
+	function onPan(delta) {
+		setOffset({ x: offset.x + delta.x, y: offset.y + delta.y });
+	}
 	return (
 		<div className="App">
-			<svg width={width} height={height+1} viewBox={`0 0 ${width} ${height+1}`}>
-				<Høse startX={width / 3} startY={height / 3} endX={left-5} endY={top} />
-				<Nøde title="Untitled" x={width / 3} y={height / 2} pørtSpacing="12" />
-				<Nøde title="xyzzy" x={width / 2} y={height / 3} pørtSpacing="11" />
-				<TextBubble text="TextBubble" x={Math.floor(width / 2)} y={Math.floor(height / 2)} padV="2" padH="7" ry="100" />
-				<OuterNøde title="root" width={width} height={height} />
-			</svg>
+			<ScrollDragCanvas width={width} height={height} onPan={onPan} x={offset.x} y={offset.y}>
+				<Nøde title="Untitled" x={pts[1].x} y={pts[1].y} pørtSpacing="12" />
+				<Nøde title="xyzzy" x={pts[2].x} y={pts[2].y} pørtSpacing="11" />
+				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
+			</ScrollDragCanvas>
 		</div>
 	);
 }
+
+// lasso selection will be necessary, for threading between nodes to select just the set you want.
+// but as though that weren't there, a robustly intuitive way to select and deselect nodes will also be necessary.

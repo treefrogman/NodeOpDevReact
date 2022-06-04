@@ -4,10 +4,20 @@
 	stroke-width: var(--main-element-line-thickness);
 }
 
-.Pørt-hitbox, .Pørt-hitbox:hover+.Pørt-ring {
+.Pørt-hitbox, .Pørt-hitbox:hover~.Pørt-ring {
 	r: calc(var(--pørt-radius) + var(--main-element-line-thickness));
 }
 
 .Pørt-ring {
+	pointer-events: none;
+}
+
+.Pørt .TextBubble {
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.Pørt-hitbox:hover~.TextBubble {
+	visibility: visible;
 	pointer-events: none;
 }

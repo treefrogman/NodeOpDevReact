@@ -4,13 +4,22 @@
 // 
 
 import React from 'react';
+import TextBubble from './TextBubble';
 import './Pørt.css';
 
 export default function Pørt(props) {
 	return (
-		<svg {...props}>
+		<svg {...props} className="Pørt">
 			<circle className="Pørt-hitbox"></circle>
+			<TextBubble text="TextBubble" y="-7" x="10" textanchor="left" padV="2" padH="7" ry="100" />
 			<circle className="Pørt-ring"></circle>
 		</svg>
 	);
 }
+
+
+/*
+
+				i've taken the wrong approach with these pørt hover effects and labels.
+				the pørts should have their inside labels as planned (but nyi), but the outer labels should be attached to the pørtSpawn object
+*/
