@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import useCorrectedDevicePixelRatio from "./utils/useCorrectedDevicePixelRatio";
 
 export default function ScrollDragCanvas(props) {
 	const { onPan, x, y, width, height, children, ...other } = props;
@@ -9,6 +10,7 @@ export default function ScrollDragCanvas(props) {
 	const [drag, setDrag] = useState(false);
 	const x0 = (x || 0) - halfwidth;
 	const y0 = (y || 0) - halfheight;
+	const dpr = useCorrectedDevicePixelRatio();
 	
 	function updateOffset(delta) {
 		// Multiply by -1 to invert the direction of the drag
@@ -38,8 +40,7 @@ export default function ScrollDragCanvas(props) {
 	}
 	function onPointerMove(e) {
 		if (drag) {
-			const scale = window.devicePixelRatio;
-			updateOffset({ x: e.movementX / scale, y: e.movementY / scale });
+			updateOffset({ x: e.movementX / dpr, y: e.movementY / dpr });
 		}
 	}
 	function onAuxClick(e) {
