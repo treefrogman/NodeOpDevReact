@@ -1,4 +1,4 @@
-import SVGRoundRectCutout from './utils/SVGRoundRectCutout';
+import SVGRoundRectCutout from './SVGRoundRectCutout';
 import NødeTitle from './NødeTitle';
 
 export default function OuterNøde(props) {
