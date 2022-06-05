@@ -7,8 +7,8 @@ export default function ScrollDragCanvas(props) {
 	const halfwidth = width / 2;
 	const halfheight = height / 2;
 	const [drag, setDrag] = useState(false);
-	const x0 = x - halfwidth;
-	const y0 = y - halfheight;
+	const x0 = (x || 0) - halfwidth;
+	const y0 = (y || 0) - halfheight;
 	
 	function updateOffset(delta) {
 		// Multiply by -1 to invert the direction of the drag
@@ -47,7 +47,7 @@ export default function ScrollDragCanvas(props) {
 	}
 	
 	function onWheel(e) {
-		updateOffset({ x: e.deltaX, y: e.deltaY });
+		updateOffset({ x: e.deltaX / 6, y: e.deltaY / 6 });
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
