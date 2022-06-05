@@ -11,7 +11,6 @@ function rpos() {
 const pts = [
 	{ x: rpos(), y: rpos() },
 	{ x: rpos(), y: rpos() },
-	{ x: rpos(), y: rpos() },
 ];
 
 export default function App() {
@@ -25,8 +24,8 @@ export default function App() {
 	return (
 		<div className="App">
 			<ScrollDragCanvas width={width} height={height} onPan={onPan} x={offset.x} y={offset.y}>
-				<Nøde title="Untitled" x={pts[1].x} y={pts[1].y} pørtSpacing="12" />
-				<Nøde title="xyzzy" x={pts[2].x} y={pts[2].y} pørtSpacing="11" />
+				<Nøde title="Untitled" x={pts[0].x} y={pts[0].y} pørtSpacing="12" />
+				<Nøde title="xyzzy" x={pts[1].x} y={pts[1].y} pørtSpacing="11" />
 				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
 			</ScrollDragCanvas>
 		</div>
