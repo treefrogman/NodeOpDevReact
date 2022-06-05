@@ -24,6 +24,13 @@
 	}
 }
 
+@media print {
+	:root {
+		--main-element-color-rgb: 0, 0, 0;
+		--canvas-back-color: white;
+	}
+}
+
 .App {
 	--text-color: white;
 	--text-back-color: rgb(32,32,32);
