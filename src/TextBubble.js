@@ -1,15 +1,15 @@
-import React from 'react';
+import { useRef } from 'react';
 import useBBox from "./utils/useBBox";
 import './TextBubble.css';
 
 export default function TextBubble(props) {
-	const textRef = React.useRef(null);
-	const { text, padH, padV, rx, ry, bboxref, textanchor, ...other } = props;
+	const textRef = useRef(null);
+	const { text, padH, padV, rx, ry, setwidth, textanchor, ...other } = props;
 	const bbox = useBBox(textRef, text);
-	if (bboxref) {
-		bboxref.current = bbox;
-	}
 	let { width, height, top, left } = bbox;
+	if (setwidth) {
+		setwidth(width);
+	}
 	width += padH * 2;
 	height += padV * 2;
 	left -= padH;

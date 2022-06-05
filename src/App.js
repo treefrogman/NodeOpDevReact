@@ -1,9 +1,6 @@
 import './App.css';
 import useWindowDimensions from './utils/useWindowDimensions';
-import React from 'react';
-import Høse from './Høse';
-import TextBubble from './TextBubble';
-// import Pørt from './Pørt';
+import { useState, useEffect } from 'react';
 import Nøde from './Nøde';
 import OuterNøde from './OuterNøde';
 import ScrollDragCanvas from './ScrollDragCanvas';
@@ -19,8 +16,8 @@ const pts = [
 
 export default function App() {
 	// No scrollbars
-	React.useEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
-	const [ offset, setOffset ] = React.useState({ x: 0, y: 0 });
+	useEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
+	const [ offset, setOffset ] = useState({ x: 0, y: 0 });
 	const { height, width } = useWindowDimensions();
 	function onPan(delta) {
 		setOffset({ x: offset.x + delta.x, y: offset.y + delta.y });
