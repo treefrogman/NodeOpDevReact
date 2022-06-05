@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import useCorrectedDevicePixelRatio from "./utils/useCorrectedDevicePixelRatio";
-import noise from "./noise.svg";
 
 export default function ScrollDragCanvas(props) {
 	const { onPan, x, y, width, height, children, ...other } = props;
@@ -13,12 +12,31 @@ export default function ScrollDragCanvas(props) {
 	const y0 = (y || 0) - halfheight;
 	const dpr = useCorrectedDevicePixelRatio();
 	const noiseScale = 500;
-	
+	const hex = makeHex(370);
+
+	function makeHex(size) {
+		const one = size / 6;
+		const sqrt3 = one * Math.sqrt(3);
+		const two = one * 2;
+		const x0 = 0;
+		const y0 = 0;
+		const x1 = one;
+		const y1 = sqrt3;
+		const y2 = sqrt3 * 2;
+		const x2 = one * 3;
+		const x3 = one * 4;
+		return {
+			w: size,
+			h: sqrt3 * 2,
+			path: `M${x0},${y1} L${x1},${y0} H${x2} L${x3},${y1} L${x2},${y2} H${x1} z M${x3},${y1} H${size}`,
+		};
+	}
+
 	function updateOffset(delta) {
 		// Multiply by -1 to invert the direction of the drag
 		onPan({ x: -delta.x, y: -delta.y });
 	}
-	
+
 	function onPointerDown(e) {
 		if (e.button === 2) {
 			// Right click
@@ -48,17 +66,17 @@ export default function ScrollDragCanvas(props) {
 	function onAuxClick(e) {
 		e.preventDefault();
 	}
-	
+
 	function onWheel(e) {
 		updateOffset({ x: -e.deltaX / 2, y: -e.deltaY / 2 });
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
-			<pattern id="noise" patternUnits="userSpaceOnUse" width={noiseScale} height={noiseScale}>
-				<image href={noise} x="0" y="0" width={noiseScale} height={noiseScale} />
+			<pattern id="hex" patternUnits="userSpaceOnUse" width={hex.w} height={hex.h}>
+				<path d={hex.path} strokeWidth="1" stroke="#777" fill="none" opacity=".15" />
 			</pattern>
 			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
-			<rect ref={backRef} className="ScrollDragCanvas-handle" fill="url(#noise)" x={x0} y={y0} width={width} height={height} />
+			<rect ref={backRef} className="ScrollDragCanvas-handle" fill="url(#hex)" x={x0} y={y0} width={width} height={height} />
 			{ children }
 		</svg>
 	);
