@@ -48,7 +48,7 @@ export default function ScrollDragCanvas(props) {
 	}
 	
 	function onWheel(e) {
-		updateOffset({ x: e.deltaX / 6, y: e.deltaY / 6 });
+		updateOffset({ x: -e.deltaX / 6, y: -e.deltaY / 6 });
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
