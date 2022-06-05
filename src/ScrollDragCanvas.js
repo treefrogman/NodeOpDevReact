@@ -51,7 +51,17 @@ export default function ScrollDragCanvas(props) {
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
-			<rect ref={backRef} className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
+			<filter id='noise'>
+				<feTurbulence baseFrequency=".5" />
+				<feColorMatrix type='matrix' values='
+					0 0 0 0 .25
+					0 0 0 0 .25
+					0 0 0 0 .25
+					-10 -10 -10 0 5
+				' />
+			</filter>
+			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
+			<rect ref={backRef} className="ScrollDragCanvas-handle" filter="url(#noise)" opacity=".15" x={x0} y={y0} width={width} height={height} />
 			{ children }
 		</svg>
 	);
