@@ -15,6 +15,14 @@ const patterns = {
 			h: sqrt3 * 2,
 			path: `M${x0},${y1} L${x1},${y0} H${x2} L${x3},${y1} L${x2},${y2} H${x1} z M${x3},${y1} H${size}`,
 		};
+	},
+	grid: size => {
+		const plusSize = size - .5;
+		return {
+			w: size,
+			h: size,
+			path: `M0,${plusSize} V0 H${plusSize} V${plusSize} z`
+		}
 	}
 };
 

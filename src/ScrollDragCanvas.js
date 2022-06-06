@@ -15,10 +15,10 @@ export default function ScrollDragCanvas(props) {
 	const x0 = (x || 0) - halfwidth;
 	const y0 = (y || 0) - halfheight;
 	const dpr = useCorrectedDevicePixelRatio();
-	const backgoundPattern = {
-		type: "hex",
-		size: 370,
-	};
+	const backgoundPattern = [
+		{ type: "hex", size: 370 },
+		{ type: "grid", size: 60 },
+	][1];
 
 	function updateOffset(newOffset) {
 		onPan({ x: startDragCanvasOffset.x + (startDragCursorOffset.x - newOffset.x) / dpr, y: startDragCanvasOffset.y + (startDragCursorOffset.y - newOffset.y) / dpr });
