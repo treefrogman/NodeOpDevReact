@@ -8,6 +8,9 @@ export default function ScrollDragCanvas(props) {
 	const halfwidth = width / 2;
 	const halfheight = height / 2;
 	const [drag, setDrag] = useState(false);
+	const [mouseButton, setMouseButton] = useState(false);
+	const [startDragCanvasOffset, setStartDragCanvasOffset] = useState({ x: 0, y: 0 });
+	const [startDragCursorOffset, setStartDragCursorOffset] = useState({ x: 0, y: 0 });
 	const x0 = (x || 0) - halfwidth;
 	const y0 = (y || 0) - halfheight;
 	const dpr = useCorrectedDevicePixelRatio();
@@ -31,12 +34,16 @@ export default function ScrollDragCanvas(props) {
 		};
 	}
 
-	function updateOffset(delta) {
-		// Multiply by -1 to invert the direction of the drag
-		onPan({ x: -delta.x, y: -delta.y });
+	function updateOffset(newOffset) {
+		onPan({ x: startDragCanvasOffset.x + (startDragCursorOffset.x - newOffset.x) / dpr, y: startDragCanvasOffset.y + (startDragCursorOffset.y - newOffset.y) / dpr });
 	}
 
+	function updateRelative(delta) {
+		onPan({ x: x - delta.x, y: y - delta.y });
+	}
+	
 	function onPointerDown(e) {
+		setMouseButton(e.button);
 		if (e.button === 2) {
 			// Right click
 			// contextmenu nyi
@@ -44,10 +51,12 @@ export default function ScrollDragCanvas(props) {
 			// Middle click
 			setDrag(true);
 			rootRef.current.requestPointerLock();
-		} else {
+		} else if (e.button === 0) {
 			// Left click
 			if (e.target === backRef.current) {
 				setDrag(true);
+				setStartDragCanvasOffset({ x, y });
+				setStartDragCursorOffset({ x: e.screenX, y: e.screenY });
 				rootRef.current.setPointerCapture(e.pointerId);
 			}
 		}
@@ -59,15 +68,21 @@ export default function ScrollDragCanvas(props) {
 	}
 	function onPointerMove(e) {
 		if (drag) {
-			updateOffset({ x: e.movementX / dpr, y: e.movementY / dpr });
+			if (mouseButton === 1) {
+				// Middle click
+				updateRelative({ x: e.movementX / dpr, y: e.movementY / dpr });
+			} else if (mouseButton === 0) {
+				// Left click
+				updateOffset({ x: e.screenX, y: e.screenY });
+			}
 		}
 	}
 	function onAuxClick(e) {
 		e.preventDefault();
 	}
-
+	
 	function onWheel(e) {
-		updateOffset({ x: -e.deltaX / 2, y: -e.deltaY / 2 });
+		updateRelative({ x: -e.deltaX / 2, y: -e.deltaY / 2 });
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>

@@ -18,12 +18,9 @@ export default function App() {
 	useEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
 	const [ offset, setOffset ] = useState({ x: 0, y: 0 });
 	const { height, width } = useWindowDimensions();
-	function onPan(delta) {
-		setOffset({ x: offset.x + delta.x, y: offset.y + delta.y });
-	}
 	return (
 		<div className="App">
-			<ScrollDragCanvas width={width} height={height} onPan={onPan} x={offset.x} y={offset.y}>
+			<ScrollDragCanvas width={width} height={height} onPan={setOffset} x={offset.x} y={offset.y}>
 				<Nøde title="Untitled" x={pts[0].x} y={pts[0].y} pørtSpacing="12" />
 				<Nøde title="xyzzy" x={pts[1].x} y={pts[1].y} pørtSpacing="11" />
 				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
