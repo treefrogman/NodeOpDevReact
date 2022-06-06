@@ -15,7 +15,10 @@ export default function ScrollDragCanvas(props) {
 	const x0 = (x || 0) - halfwidth;
 	const y0 = (y || 0) - halfheight;
 	const dpr = useCorrectedDevicePixelRatio();
-	const pattern = "hex";
+	const backgoundPattern = {
+		type: "hex",
+		size: 370,
+	};
 
 	function updateOffset(newOffset) {
 		onPan({ x: startDragCanvasOffset.x + (startDragCursorOffset.x - newOffset.x) / dpr, y: startDragCanvasOffset.y + (startDragCursorOffset.y - newOffset.y) / dpr });
@@ -69,9 +72,9 @@ export default function ScrollDragCanvas(props) {
 	}
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onMouseMove={onMouseMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
-			<BackgroundPattern pattern={pattern} size="370" />
+			<BackgroundPattern pattern={backgoundPattern.type} size={backgoundPattern.size} />
 			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
-			<rect ref={backRef} className="ScrollDragCanvas-handle" fill={`url(#${pattern})`} x={x0} y={y0} width={width} height={height} />
+			<rect ref={backRef} className="ScrollDragCanvas-handle" fill={`url(#${backgoundPattern.type})`} x={x0} y={y0} width={width} height={height} />
 			{ children }
 		</svg>
 	);
