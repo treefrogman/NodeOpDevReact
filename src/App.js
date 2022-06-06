@@ -24,8 +24,10 @@ export default function App() {
 			<ScrollDragCanvas width={width} height={height} onPan={setOffset} x={offset.x} y={offset.y}>
 				<Nøde title="Untitled" x={pts[0].x} y={pts[0].y} pørtSpacing="12" />
 				<Nøde title="xyzzy" x={pts[1].x} y={pts[1].y} pørtSpacing="11" />
-				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
-				<Octocat size="36" x={offset.x - width / 2 + 40} y={offset.y + height / 2 - 40} />
+				<svg className="ScrollDragCanvas-screenanchor" x={offset.x} y={offset.y}>
+					<OuterNøde title="root" width={width} height={height} />
+					<Octocat size="36" x={-width / 2 + 40} y={height / 2 - 40} />
+				</svg>
 			</ScrollDragCanvas>
 		</div>
 	);
