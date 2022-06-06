@@ -66,7 +66,7 @@ export default function ScrollDragCanvas(props) {
 		document.exitPointerLock();
 		rootRef.current.releasePointerCapture(e.pointerId);
 	}
-	function onPointerMove(e) {
+	function onMouseMove(e) {
 		if (drag) {
 			if (mouseButton === 1) {
 				// Middle click
@@ -85,7 +85,7 @@ export default function ScrollDragCanvas(props) {
 		updateRelative({ x: -e.deltaX / 2, y: -e.deltaY / 2 });
 	}
 	return (
-		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
+		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onMouseMove={onMouseMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
 			<pattern id="hex" patternUnits="userSpaceOnUse" width={hex.w} height={hex.h}>
 				<path d={hex.path} strokeWidth="1" stroke="#777" fill="none" opacity=".15" />
 			</pattern>
