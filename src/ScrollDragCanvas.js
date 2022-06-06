@@ -11,7 +11,6 @@ export default function ScrollDragCanvas(props) {
 	const x0 = (x || 0) - halfwidth;
 	const y0 = (y || 0) - halfheight;
 	const dpr = useCorrectedDevicePixelRatio();
-	const noiseScale = 500;
 	const hex = makeHex(370);
 
 	function makeHex(size) {
