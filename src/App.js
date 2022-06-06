@@ -1,18 +1,15 @@
 import './App.css';
 import useWindowDimensions from './utils/useWindowDimensions';
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import Nøde from './Nøde';
 import OuterNøde from './OuterNøde';
 import ScrollDragCanvas from './ScrollDragCanvas';
 import Octocat from './Octocat';
+import DrawingBoard from './DrawingBoard';
 
 function rpos() {
 	return (Math.random()-.5) * 600;
 }
-const pts = [
-	{ x: rpos(), y: rpos() },
-	{ x: rpos(), y: rpos() },
-];
 
 const testNodes = [
 	{ title: "Untitled", x: rpos(), y: rpos() },
@@ -22,14 +19,21 @@ const testNodes = [
 
 export default function App() {
 	// No scrollbars
-	useEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
+	useLayoutEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
 	const [ offset, setOffset ] = useState({ x: 0, y: 0 });
+	const [ nodes, setNodes ] = useState(testNodes);
 	const { height, width } = useWindowDimensions();
 	return (
 		<div className="App">
 			<ScrollDragCanvas width={width} height={height} onPan={setOffset} x={offset.x} y={offset.y}>
-				{ testNodes.map(node=>{
-					return <Nøde {...node} pørtSpacing="12" />;
+				{ nodes.map((node,i)=>{
+					return <Nøde {...node} key={i} pørtSpacing="12" onMove={newPos=>{
+						setNodes(prevNodes=>{
+							return prevNodes.map((prevNode,prevI)=>{
+								return prevI === i ? { title: prevNode.title, ...newPos } : prevNode;
+							});
+						});
+					}} />;
 				}) }
 				<svg className="ScrollDragCanvas-screenanchor" x={offset.x} y={offset.y}>
 					<OuterNøde title="root" width={width} height={height} />
@@ -42,3 +46,6 @@ export default function App() {
 
 // lasso selection will be necessary, for threading between nodes to select just the set you want.
 // but as though that weren't there, a robustly intuitive way to select and deselect nodes will also be necessary.
+
+// lasso selection uses fill-rule:evenodd to create a shape, then checks the center of each node whether it's in the shape or not.
+// this will behave like an actual rope being wrapped around pegs. if you want to deselect something within, just wrap around it the other way.
