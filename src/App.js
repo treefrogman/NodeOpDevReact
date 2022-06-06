@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Nøde from './Nøde';
 import OuterNøde from './OuterNøde';
 import ScrollDragCanvas from './ScrollDragCanvas';
+import Octocat from './Octocat';
 
 function rpos() {
 	return (Math.random()-.5) * 600;
@@ -24,6 +25,7 @@ export default function App() {
 				<Nøde title="Untitled" x={pts[0].x} y={pts[0].y} pørtSpacing="12" />
 				<Nøde title="xyzzy" x={pts[1].x} y={pts[1].y} pørtSpacing="11" />
 				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
+				<Octocat size="36" x={-width/2 + 40} y={height/2 - 40} />
 			</ScrollDragCanvas>
 		</div>
 	);

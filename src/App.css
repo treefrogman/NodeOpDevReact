@@ -14,7 +14,7 @@
 	overflow: visible;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	:root {
 		--main-back-color: rgb(32,32,32);
 		--main-element-color-rgb: 212, 212, 212;
@@ -22,7 +22,7 @@
 		--main-element-color: rgb(var(--main-element-color-rgb));
 		--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
 	}
-}
+} */
 
 @media print {
 	:root {
@@ -35,6 +35,14 @@
 	--text-color: white;
 	--text-back-color: rgb(32,32,32);
 	font-size: 14px;
+}
+
+.Octocat {
+	fill: var(--main-element-color);
+}
+
+.Octocat-hitbox {
+	fill: var(--main-element-color-transparent);
 }
 
 .ScrollDragCanvas-back {
