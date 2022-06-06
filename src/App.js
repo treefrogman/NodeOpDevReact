@@ -25,7 +25,7 @@ export default function App() {
 				<Nøde title="Untitled" x={pts[0].x} y={pts[0].y} pørtSpacing="12" />
 				<Nøde title="xyzzy" x={pts[1].x} y={pts[1].y} pørtSpacing="11" />
 				<OuterNøde title="root" x={offset.x} y={offset.y} width={width} height={height} />
-				<Octocat size="36" x={-width/2 + 40} y={height/2 - 40} />
+				<Octocat size="36" x={offset.x - width / 2 + 40} y={offset.y + height / 2 - 40} />
 			</ScrollDragCanvas>
 		</div>
 	);
