@@ -87,7 +87,7 @@ export default function ScrollDragCanvas(props) {
 	return (
 		<svg ref={rootRef} width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onMouseMove={onMouseMove} onWheel={onWheel} onAuxClick={onAuxClick} {...other}>
 			<pattern id="hex" patternUnits="userSpaceOnUse" width={hex.w} height={hex.h}>
-				<path d={hex.path} strokeWidth="1" stroke="#777" fill="none" opacity=".15" />
+				<path d={hex.path} className="ScrollDragCanvas-pattern" />
 			</pattern>
 			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
 			<rect ref={backRef} className="ScrollDragCanvas-handle" fill="url(#hex)" x={x0} y={y0} width={width} height={height} />

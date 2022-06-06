@@ -1,6 +1,6 @@
 :root {
 	--main-back-color: rgb(255, 255, 255);
-	--canvas-back-color: rgb(212, 212, 212);
+	--canvas-back-color: hsl(0, 0%, 93%);
 	--main-element-color-rgb: 32, 32, 32;
 	--main-element-color: rgb(var(--main-element-color-rgb));
 	--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
@@ -14,7 +14,7 @@
 	overflow: visible;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--main-back-color: rgb(32,32,32);
 		--main-element-color-rgb: 212, 212, 212;
@@ -22,7 +22,7 @@
 		--main-element-color: rgb(var(--main-element-color-rgb));
 		--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
 	}
-} */
+}
 
 @media print {
 	:root {
@@ -47,6 +47,13 @@
 
 .ScrollDragCanvas-back {
 	fill: var(--canvas-back-color);
+}
+
+.ScrollDragCanvas-pattern {
+	fill: none;
+	stroke-width: 1;
+	stroke: #888;
+	opacity: .1;
 }
 
 .TextBubble-text {
