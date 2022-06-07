@@ -17,7 +17,7 @@ export default function DragHandle(props) {
 			onDragStart && onDragStart();
 		}
 	}
-	function onMouseMove(e) {
+	function onPointerMove(e) {
 		if (drag) {
 			// Left click
 			onDragMove({ x: startDragHandleOffset.x + (e.screenX - startDragCursorOffset.x) / dpr, y: startDragHandleOffset.y + (e.screenY - startDragCursorOffset.y) / dpr });
@@ -26,10 +26,10 @@ export default function DragHandle(props) {
 	function onPointerUp(e) {
 		if (drag) {
 			setDrag(false);
-			onMouseMove(e);
+			onPointerMove(e);
 		}
 		e.target.releasePointerCapture(e.pointerId);
 	}
 	
-	return React.cloneElement(React.Children.only(children), { onPointerDown, onMouseMove, onPointerUp });
+	return React.cloneElement(React.Children.only(children), { onPointerDown, onMouseMove: onPointerMove, onPointerMove, onPointerUp });
 }
