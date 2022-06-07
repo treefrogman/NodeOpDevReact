@@ -50,8 +50,24 @@ export default function App() {
 	);
 }
 
-// lasso selection will be necessary, for threading between nodes to select just the set you want.
-// but as though that weren't there, a robustly intuitive way to select and deselect nodes will also be necessary.
+/*
+lasso selection will be necessary, for threading between nodes to select just the set you want.
+but as though that weren't there, a robustly intuitive way to select and deselect nodes will also be necessary.
 
-// lasso selection uses fill-rule:evenodd to create a shape, then checks the center of each node whether it's in the shape or not.
-// this will behave like an actual rope being wrapped around pegs. if you want to deselect something within, just wrap around it the other way.
+lasso selection uses fill-rule:evenodd to create a shape, then checks the center of each node whether it's in the shape or not.
+this will behave like an actual rope being wrapped around pegs. if you want to deselect something within, just wrap around it the other way.
+
+even on mobile --- especially on mobile --- the selection process will have undoable steps
+
+desktop:
+you click a node
+you shift-click another node
+the undo button appears in the toolbar: the shift-select can be undone
+
+
+f2 or double-click to rename
+with f2 you can rename multiple at once, with multicursor just like vscode
+
+maybe host using this
+https://tomekkolasa.com/how-to-deploy-node-js-app-to-google-app-engine-using-github-actions
+*/
