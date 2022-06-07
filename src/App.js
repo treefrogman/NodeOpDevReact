@@ -5,7 +5,6 @@ import Nøde from './Nøde';
 import OuterNøde from './OuterNøde';
 import ScrollDragCanvas from './ScrollDragCanvas';
 import Octocat from './Octocat';
-import DrawingBoard from './DrawingBoard';
 
 function rpos() {
 	return (Math.random()-.5) * 600;
