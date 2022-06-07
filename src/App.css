@@ -18,7 +18,7 @@
 	:root {
 		--main-back-color: rgb(32,32,32);
 		--main-element-color-rgb: 212, 212, 212;
-		--canvas-back-color: rgb(68, 62, 62);
+		--canvas-back-color: hsl(0, 5%, 20%);
 		--main-element-color: rgb(var(--main-element-color-rgb));
 		--main-element-color-transparent: rgba(var(--main-element-color-rgb), 0);
 	}
