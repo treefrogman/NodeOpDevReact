@@ -48,11 +48,19 @@ export default function ScrollDragCanvas(props) {
 	}
 	
 	function onAuxClick(e) {
+		// prevent middle-click to open in new tab
 		e.preventDefault();
 	}
 	
 	function onWheel(e) {
 		updateRelative({ x: -e.deltaX / 2, y: -e.deltaY / 2 });
+	}
+	
+	function onTouchStart(event){
+		if(event.touches.length > 1){
+			// the event is multi-touch, so prevent the behavior
+			event.preventDefault()
+		}
 	}
 	
 	useEffect(() => {
@@ -65,7 +73,7 @@ export default function ScrollDragCanvas(props) {
 	});
 		
 	return (
-		<svg width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} {...{onKeyDown, onKeyUp, onPointerDown, onPointerUp, onMouseMove, onWheel, onAuxClick}} {...other}>
+		<svg width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} {...{onKeyDown, onKeyUp, onPointerDown, onPointerUp, onMouseMove, onWheel, onAuxClick, onTouchStart}} {...other}>
 			<BackgroundPattern pattern={backgoundPattern.type} size={backgoundPattern.size} />
 			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
 			<rect className="ScrollDragCanvas-handle" fill={`url(#${backgoundPattern.type})`} x={x0} y={y0} width={width} height={height} />
