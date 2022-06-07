@@ -31,6 +31,10 @@
 	}
 }
 
+body {
+	overflow: hidden;
+}
+
 .App {
 	--text-color: white;
 	--text-back-color: rgb(32,32,32);

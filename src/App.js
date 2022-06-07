@@ -17,8 +17,6 @@ const testNodes = [
 ];
 
 export default function App() {
-	// No scrollbars
-	useLayoutEffect(() => (document.body.style.overflow = "hidden") && undefined, []);
 	const [ offset, setOffset ] = useState({ x: 0, y: 0 });
 	const [ nodes, setNodes ] = useState(testNodes);
 	const { height, width } = useWindowDimensions();
