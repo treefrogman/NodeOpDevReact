@@ -70,4 +70,7 @@ with f2 you can rename multiple at once, with multicursor just like vscode
 
 maybe host using this
 https://tomekkolasa.com/how-to-deploy-node-js-app-to-google-app-engine-using-github-actions
+
+don't actually have to worry about z-stacking of nodes, nor connector routing for overlapping nodes
+because dragging one node onto another will have its own defined behavior
 */
