@@ -14,17 +14,26 @@ export default function ScrollDragCanvas(props) {
 		{ type: "grid", size: 60 },
 	][1];
 
+	function updateAbsolute(position) {
+		onPan({ x: position.x, y: position.y });
+	}
+
 	function updateRelative(delta) {
 		onPan({ x: x - delta.x, y: y - delta.y });
 	}
 	
 	function onKeyDown(e) {
 		if (e.keyCode === 32) {
+			// spacebar
 			setSpacebar(true);
+		} else if (e.keyCode === 36) {
+			// home key
+			updateAbsolute({ x: 0, y: 0 }); // naive initial implementation
 		}
 	}
 	function onKeyUp(e) {
 		if (e.keyCode === 32) {
+			// spacebar
 			setSpacebar(false);
 		}
 	}
