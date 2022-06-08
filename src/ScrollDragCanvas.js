@@ -76,7 +76,7 @@ export default function ScrollDragCanvas(props) {
 		<svg width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} {...{onKeyDown, onKeyUp, onPointerDown, onPointerUp, onMouseMove, onWheel, onAuxClick, onTouchStart}} {...other}>
 			<BackgroundPattern pattern={backgoundPattern.type} size={backgoundPattern.size} />
 			<rect className="ScrollDragCanvas-back" x={x0} y={y0} width={width} height={height} />
-			<rect className="ScrollDragCanvas-handle" fill={`url(#${backgoundPattern.type})`} x={x0} y={y0} width={width} height={height} />
+			<rect className="ScrollDragCanvas-handle" fill={`url(#${backgoundPattern.type})`} x={x0} y={y0} width={width} height={height} style={spacebar?{cursor:"grab"}:{}} />
 			{ children }
 		</svg>
 	);
