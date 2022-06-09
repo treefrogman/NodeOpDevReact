@@ -21,16 +21,8 @@ export default function App() {
 	const [ nodes, setNodes ] = useState(testNodes);
 	const { height, width } = useWindowDimensions();
 	
-	function onDoubleClick(e) {
-		// enter and exit fullscreen mode with a double-click/-tap
-		if (document.fullscreenElement !== null) {
-			document.exitFullscreen()
-		} else {
-			document.body.requestFullscreen();
-		}
-	}
 	return (
-		<div className="App" onDoubleClick={onDoubleClick}>
+		<div className="App">
 			<ScrollDragCanvas width={width} height={height} onPan={setOffset} x={offset.x} y={offset.y}>
 				{ nodes.map((node,i)=>{
 					return <Nøde {...node} key={i} pørtSpacing="12" onMove={newPos=>{
