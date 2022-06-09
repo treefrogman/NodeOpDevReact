@@ -19,7 +19,7 @@ export default function Nøde(props) {
 		],
 	}
 	const maxPørts = Math.max(pørts.in.length, pørts.out.length);
-	const height = pørtSpacing * maxPørts;
+	const height = pørtSpacing * (maxPørts + 1);
 	const width = titleWidth + 30;
 	const halfwidth = width / 2;
 	return (
@@ -27,10 +27,10 @@ export default function Nøde(props) {
 			<svg className="Nøde" x={x} y={y} {...other}>
 				<rect className="Nøde-back" x={-halfwidth} y={0} width={width} height={height} rx="4" />
 				<svg className="PørtSet PørtSetIn" x={-halfwidth} y={0}>
-					{pørts.in.map((pørt, i) => <Pørt key={pørt} y={i * pørtSpacing} />)}
+					{pørts.in.map((pørt, i) => <Pørt key={pørt} y={(i + 1) * pørtSpacing} />)}
 				</svg>
 				<svg className="PørtSet PørtSetOut" x={halfwidth} y={0}>
-					{pørts.out.map((pørt, i) => <Pørt key={pørt} y={i * pørtSpacing} />)}
+					{pørts.out.map((pørt, i) => <Pørt key={pørt} y={(i + 1) * pørtSpacing} />)}
 				</svg>
 				<NødeTitle title={title} setwidth={setTitleWidth} />
 			</svg>
