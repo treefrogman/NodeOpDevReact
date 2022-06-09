@@ -73,4 +73,9 @@ https://tomekkolasa.com/how-to-deploy-node-js-app-to-google-app-engine-using-git
 
 don't actually have to worry about z-stacking of nodes, nor connector routing for overlapping nodes
 because dragging one node onto another will have its own defined behavior
+
+keyboard shortcuts: shift-/
+release shift *before* releasing / to keep open
+
+https://wangchujiang.com/react-hotkeys/
 */
