@@ -44,6 +44,11 @@ body {
 	font-size: 14px;
 }
 
+text {
+	pointer-events: none;
+	user-select: none;
+}
+
 .Octocat {
 	fill: var(--main-element-color);
 }

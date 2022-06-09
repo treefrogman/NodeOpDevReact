@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import useBBox from "./utils/useBBox";
-import './TextBubble.css';
 
 export default function TextBubble(props) {
 	const textRef = useRef(null);
