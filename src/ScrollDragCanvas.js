@@ -93,13 +93,15 @@ export default function ScrollDragCanvas(props) {
 			document.removeEventListener("keyup", onKeyUp);
 		}
 	});
-		
+	
+	const pattern = <BackgroundPattern pattern={backgoundPattern.type} size={backgoundPattern.size} />;
+	const back = <rect className="ScrollDragCanvas-back" {...{...dimensions}} />;
+	const handle = <rect className="ScrollDragCanvas-handle" {...{fill:`url(#${backgoundPattern.type})`, ...dimensions, style:spacebar?{cursor:"grab"}:{}, onDoubleClick}} />;
+	const childrenContainer = <g style={{pointerEvents:spacebar?"none":"auto"}}>{children}</g>;
+	
 	return (
 		<svg width={width} height={height+1} viewBox={[x0, y0, width, height+1].join(" ")} {...{onKeyDown, onKeyUp, onPointerDown, onPointerUp, onMouseMove, onWheel, onAuxClick, onTouchStart}} {...other}>
-			<BackgroundPattern pattern={backgoundPattern.type} size={backgoundPattern.size} />
-			<rect className="ScrollDragCanvas-back" {...dimensions} />
-			<rect className="ScrollDragCanvas-handle" {...{fill:`url(#${backgoundPattern.type})`, ...dimensions, style:spacebar?{cursor:"grab"}:{}, onDoubleClick}} />
-			{ children }
+			{ [pattern, back, handle, childrenContainer] }
 		</svg>
 	);
 }
